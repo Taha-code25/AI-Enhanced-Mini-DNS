@@ -1,0 +1,17 @@
+[
+  {
+    "domain": "portal.university.test",
+    "ip": "10.0.0.10",
+    "ttl": 300
+  },
+  {
+    "domain": "library.university.test",
+    "ip": "10.0.0.20",
+    "ttl": 300
+  },
+  {
+    "domain": "mail.university.test",
+    "ip": "10.0.0.30",
+    "ttl": 300
+  }
+]
