@@ -101,8 +101,8 @@ These are fictional records for local testing, not public DNS records.
 
 -   **Language:** Python 3.12 recommended
 -   **Networking:** Python `socket` module
--   **Protocol:** Team-defined application-layer protocol (for example,
-    UTF-8 JSON over UDP)
+-   **Protocol:** Custom version-1 binary protocol over UDP (`!BBIH`
+    header; see `protocol/protocol.md`)
 -   **AI/ML:** scikit-learn
 -   **Data analysis:** pandas and NumPy
 -   **Plots:** Matplotlib
@@ -185,6 +185,37 @@ The exact commands depend on the Python entry-point filenames and
 functions implemented in this repository. Update this section with the
 verified commands once those files are ready; do not assume filenames
 before they exist.
+
+## Authoritative DNS Server
+
+The authoritative server answers valid Mini DNS queries from the
+configured records in `data/records.json`; it does not perform recursive
+or public DNS lookups. It uses the shared binary UDP protocol and listens
+on `127.0.0.1:5301` by default. Configure the endpoint with
+`MINIDNS_AUTH_HOST` and `MINIDNS_AUTH_PORT`, or pass `--bind-host` and
+`--port`. For multi-host use, bind to the appropriate interface and set
+the resolver's `MINIDNS_AUTH_HOST` to the server's reachable address.
+
+Start it from the repository root:
+
+```bash
+python -m authoritative.server
+```
+
+The sample records, each with a 300-second TTL, are:
+
+| Domain | IPv4 address |
+|---|---|
+| `portal.university.test` | `10.0.0.10` |
+| `library.university.test` | `10.0.0.20` |
+| `mail.university.test` | `10.0.0.30` |
+
+Run the authoritative unit tests and compile check with:
+
+```bash
+python -m unittest discover -s tests -p "test_authoritative.py" -v
+python -m compileall authoritative tests
+```
 
 ## Query flow
 
