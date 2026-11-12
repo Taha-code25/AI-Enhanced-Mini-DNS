@@ -1,0 +1,380 @@
+2026-11-12 19:40:55,613 INFO Resolver listening on 127.0.0.1:62122
+2026-11-12 19:40:55,642 INFO CACHE_MISS domain=cold-0.bench.test
+2026-11-12 19:40:55,642 INFO RESOLVED domain=cold-0.bench.test ip=10.0.0.7 ttl=300
+2026-11-12 19:40:55,658 INFO CACHE_MISS domain=cold-1.bench.test
+2026-11-12 19:40:55,660 INFO RESOLVED domain=cold-1.bench.test ip=10.0.0.8 ttl=300
+2026-11-12 19:40:55,674 INFO CACHE_MISS domain=hot-2.bench.test
+2026-11-12 19:40:55,676 INFO RESOLVED domain=hot-2.bench.test ip=10.0.0.3 ttl=300
+2026-11-12 19:40:55,690 INFO CACHE_MISS domain=hot-0.bench.test
+2026-11-12 19:40:55,690 INFO RESOLVED domain=hot-0.bench.test ip=10.0.0.1 ttl=300
+2026-11-12 19:40:55,690 INFO CACHE_MISS domain=cold-4.bench.test
+2026-11-12 19:40:55,693 INFO RESOLVED domain=cold-4.bench.test ip=10.0.0.11 ttl=300
+2026-11-12 19:40:55,705 INFO CACHE_MISS domain=cold-5.bench.test
+2026-11-12 19:40:55,707 INFO RESOLVED domain=cold-5.bench.test ip=10.0.0.12 ttl=300
+2026-11-12 19:40:55,721 INFO CACHE_HIT domain=hot-0.bench.test ttl=299
+2026-11-12 19:40:55,737 INFO CACHE_HIT domain=hot-0.bench.test ttl=299
+2026-11-12 19:40:55,737 INFO CACHE_MISS domain=cold-8.bench.test
+2026-11-12 19:40:55,737 INFO RESOLVED domain=cold-8.bench.test ip=10.0.0.15 ttl=300
+2026-11-12 19:40:55,753 INFO CACHE_MISS domain=cold-9.bench.test
+2026-11-12 19:40:55,753 INFO RESOLVED domain=cold-9.bench.test ip=10.0.0.16 ttl=300
+2026-11-12 19:40:55,770 INFO CACHE_HIT domain=hot-2.bench.test ttl=299
+2026-11-12 19:40:55,785 INFO CACHE_MISS domain=cold-11.bench.test
+2026-11-12 19:40:55,785 INFO RESOLVED domain=cold-11.bench.test ip=10.0.0.18 ttl=300
+2026-11-12 19:40:55,785 INFO CACHE_MISS domain=cold-12.bench.test
+2026-11-12 19:40:55,790 INFO RESOLVED domain=cold-12.bench.test ip=10.0.0.19 ttl=300
+2026-11-12 19:40:55,802 INFO CACHE_MISS domain=cold-13.bench.test
+2026-11-12 19:40:55,802 INFO RESOLVED domain=cold-13.bench.test ip=10.0.0.20 ttl=300
+2026-11-12 19:40:55,818 INFO CACHE_MISS domain=hot-1.bench.test
+2026-11-12 19:40:55,818 INFO RESOLVED domain=hot-1.bench.test ip=10.0.0.2 ttl=300
+2026-11-12 19:40:55,832 INFO CACHE_MISS domain=cold-15.bench.test
+2026-11-12 19:40:55,834 INFO RESOLVED domain=cold-15.bench.test ip=10.0.0.22 ttl=300
+2026-11-12 19:40:55,834 INFO CACHE_MISS domain=cold-16.bench.test
+2026-11-12 19:40:55,834 INFO RESOLVED domain=cold-16.bench.test ip=10.0.0.23 ttl=300
+2026-11-12 19:40:55,848 INFO CACHE_MISS domain=hot-3.bench.test
+2026-11-12 19:40:55,848 INFO RESOLVED domain=hot-3.bench.test ip=10.0.0.4 ttl=300
+2026-11-12 19:40:55,865 INFO CACHE_MISS domain=cold-18.bench.test
+2026-11-12 19:40:55,866 INFO RESOLVED domain=cold-18.bench.test ip=10.0.0.25 ttl=300
+2026-11-12 19:40:55,881 INFO CACHE_MISS domain=hot-0.bench.test
+2026-11-12 19:40:55,881 INFO RESOLVED domain=hot-0.bench.test ip=10.0.0.1 ttl=300
+2026-11-12 19:40:55,881 INFO CACHE_HIT domain=hot-1.bench.test ttl=299
+2026-11-12 19:40:55,897 INFO CACHE_HIT domain=hot-0.bench.test ttl=299
+2026-11-12 19:40:55,913 INFO CACHE_MISS domain=cold-22.bench.test
+2026-11-12 19:40:55,913 INFO RESOLVED domain=cold-22.bench.test ip=10.0.0.29 ttl=300
+2026-11-12 19:40:55,928 INFO CACHE_HIT domain=hot-1.bench.test ttl=299
+2026-11-12 19:40:55,928 INFO CACHE_MISS domain=cold-24.bench.test
+2026-11-12 19:40:55,928 INFO RESOLVED domain=cold-24.bench.test ip=10.0.0.31 ttl=300
+2026-11-12 19:40:55,944 INFO CACHE_MISS domain=cold-25.bench.test
+2026-11-12 19:40:55,946 INFO RESOLVED domain=cold-25.bench.test ip=10.0.0.32 ttl=300
+2026-11-12 19:40:55,960 INFO CACHE_MISS domain=cold-26.bench.test
+2026-11-12 19:40:55,960 INFO RESOLVED domain=cold-26.bench.test ip=10.0.0.33 ttl=300
+2026-11-12 19:40:55,977 INFO CACHE_HIT domain=hot-3.bench.test ttl=299
+2026-11-12 19:40:55,992 INFO CACHE_MISS domain=cold-28.bench.test
+2026-11-12 19:40:55,992 INFO RESOLVED domain=cold-28.bench.test ip=10.0.0.35 ttl=300
+2026-11-12 19:40:55,992 INFO CACHE_MISS domain=cold-29.bench.test
+2026-11-12 19:40:55,992 INFO RESOLVED domain=cold-29.bench.test ip=10.0.0.36 ttl=300
+2026-11-12 19:40:56,008 INFO CACHE_MISS domain=cold-30.bench.test
+2026-11-12 19:40:56,008 INFO RESOLVED domain=cold-30.bench.test ip=10.0.0.37 ttl=300
+2026-11-12 19:40:56,023 INFO CACHE_MISS domain=cold-31.bench.test
+2026-11-12 19:40:56,023 INFO RESOLVED domain=cold-31.bench.test ip=10.0.0.38 ttl=300
+2026-11-12 19:40:56,023 INFO CACHE_MISS domain=cold-32.bench.test
+2026-11-12 19:40:56,023 INFO RESOLVED domain=cold-32.bench.test ip=10.0.0.39 ttl=300
+2026-11-12 19:40:56,048 INFO CACHE_MISS domain=cold-33.bench.test
+2026-11-12 19:40:56,050 INFO RESOLVED domain=cold-33.bench.test ip=10.0.0.40 ttl=300
+2026-11-12 19:40:56,050 INFO CACHE_HIT domain=hot-3.bench.test ttl=299
+2026-11-12 19:40:56,064 INFO CACHE_MISS domain=hot-1.bench.test
+2026-11-12 19:40:56,066 INFO RESOLVED domain=hot-1.bench.test ip=10.0.0.2 ttl=300
+2026-11-12 19:40:56,080 INFO CACHE_MISS domain=hot-0.bench.test
+2026-11-12 19:40:56,081 INFO RESOLVED domain=hot-0.bench.test ip=10.0.0.1 ttl=300
+2026-11-12 19:40:56,089 INFO CACHE_MISS domain=cold-37.bench.test
+2026-11-12 19:40:56,089 INFO RESOLVED domain=cold-37.bench.test ip=10.0.0.44 ttl=300
+2026-11-12 19:40:56,099 INFO CACHE_MISS domain=cold-38.bench.test
+2026-11-12 19:40:56,099 INFO RESOLVED domain=cold-38.bench.test ip=10.0.0.45 ttl=300
+2026-11-12 19:40:56,115 INFO CACHE_MISS domain=cold-39.bench.test
+2026-11-12 19:40:56,115 INFO RESOLVED domain=cold-39.bench.test ip=10.0.0.46 ttl=300
+2026-11-12 19:40:56,131 INFO CACHE_MISS domain=cold-40.bench.test
+2026-11-12 19:40:56,132 INFO RESOLVED domain=cold-40.bench.test ip=10.0.0.47 ttl=300
+2026-11-12 19:40:56,132 INFO CACHE_MISS domain=cold-41.bench.test
+2026-11-12 19:40:56,132 INFO RESOLVED domain=cold-41.bench.test ip=10.0.0.48 ttl=300
+2026-11-12 19:40:56,148 INFO CACHE_HIT domain=hot-1.bench.test ttl=299
+2026-11-12 19:40:56,163 INFO CACHE_MISS domain=cold-43.bench.test
+2026-11-12 19:40:56,165 INFO RESOLVED domain=cold-43.bench.test ip=10.0.0.50 ttl=300
+2026-11-12 19:40:56,179 INFO CACHE_MISS domain=cold-44.bench.test
+2026-11-12 19:40:56,179 INFO RESOLVED domain=cold-44.bench.test ip=10.0.0.51 ttl=300
+2026-11-12 19:40:56,197 INFO CACHE_MISS domain=cold-45.bench.test
+2026-11-12 19:40:56,198 INFO RESOLVED domain=cold-45.bench.test ip=10.0.0.52 ttl=300
+2026-11-12 19:40:56,199 INFO CACHE_MISS domain=cold-46.bench.test
+2026-11-12 19:40:56,201 INFO RESOLVED domain=cold-46.bench.test ip=10.0.0.53 ttl=300
+2026-11-12 19:40:56,211 INFO CACHE_MISS domain=hot-4.bench.test
+2026-11-12 19:40:56,211 INFO RESOLVED domain=hot-4.bench.test ip=10.0.0.5 ttl=300
+2026-11-12 19:40:56,227 INFO CACHE_MISS domain=cold-48.bench.test
+2026-11-12 19:40:56,229 INFO RESOLVED domain=cold-48.bench.test ip=10.0.0.55 ttl=300
+2026-11-12 19:40:56,243 INFO CACHE_MISS domain=hot-3.bench.test
+2026-11-12 19:40:56,245 INFO RESOLVED domain=hot-3.bench.test ip=10.0.0.4 ttl=300
+2026-11-12 19:40:56,245 INFO CACHE_MISS domain=cold-50.bench.test
+2026-11-12 19:40:56,247 INFO RESOLVED domain=cold-50.bench.test ip=10.0.0.57 ttl=300
+2026-11-12 19:40:56,259 INFO CACHE_MISS domain=cold-51.bench.test
+2026-11-12 19:40:56,261 INFO RESOLVED domain=cold-51.bench.test ip=10.0.0.58 ttl=300
+2026-11-12 19:40:56,275 INFO CACHE_MISS domain=cold-52.bench.test
+2026-11-12 19:40:56,277 INFO RESOLVED domain=cold-52.bench.test ip=10.0.0.59 ttl=300
+2026-11-12 19:40:56,291 INFO CACHE_MISS domain=cold-53.bench.test
+2026-11-12 19:40:56,293 INFO RESOLVED domain=cold-53.bench.test ip=10.0.0.60 ttl=300
+2026-11-12 19:40:56,293 INFO CACHE_MISS domain=hot-1.bench.test
+2026-11-12 19:40:56,295 INFO RESOLVED domain=hot-1.bench.test ip=10.0.0.2 ttl=300
+2026-11-12 19:40:56,306 INFO CACHE_HIT domain=hot-3.bench.test ttl=299
+2026-11-12 19:40:56,322 INFO CACHE_MISS domain=cold-56.bench.test
+2026-11-12 19:40:56,323 INFO RESOLVED domain=cold-56.bench.test ip=10.0.0.63 ttl=300
+2026-11-12 19:40:56,338 INFO CACHE_MISS domain=cold-57.bench.test
+2026-11-12 19:40:56,340 INFO RESOLVED domain=cold-57.bench.test ip=10.0.0.64 ttl=300
+2026-11-12 19:40:56,340 INFO CACHE_MISS domain=cold-58.bench.test
+2026-11-12 19:40:56,340 INFO RESOLVED domain=cold-58.bench.test ip=10.0.0.65 ttl=300
+2026-11-12 19:40:56,354 INFO CACHE_MISS domain=cold-59.bench.test
+2026-11-12 19:40:56,355 INFO RESOLVED domain=cold-59.bench.test ip=10.0.0.66 ttl=300
+2026-11-12 19:40:56,370 INFO CACHE_MISS domain=cold-60.bench.test
+2026-11-12 19:40:56,371 INFO RESOLVED domain=cold-60.bench.test ip=10.0.0.67 ttl=300
+2026-11-12 19:40:56,386 INFO CACHE_MISS domain=hot-0.bench.test
+2026-11-12 19:40:56,386 INFO RESOLVED domain=hot-0.bench.test ip=10.0.0.1 ttl=300
+2026-11-12 19:40:56,386 INFO CACHE_MISS domain=hot-5.bench.test
+2026-11-12 19:40:56,390 INFO RESOLVED domain=hot-5.bench.test ip=10.0.0.6 ttl=300
+2026-11-12 19:40:56,402 INFO CACHE_MISS domain=cold-63.bench.test
+2026-11-12 19:40:56,402 INFO RESOLVED domain=cold-63.bench.test ip=10.0.0.70 ttl=300
+2026-11-12 19:40:56,418 INFO CACHE_MISS domain=cold-64.bench.test
+2026-11-12 19:40:56,418 INFO RESOLVED domain=cold-64.bench.test ip=10.0.0.71 ttl=300
+2026-11-12 19:40:56,433 INFO CACHE_MISS domain=hot-3.bench.test
+2026-11-12 19:40:56,433 INFO RESOLVED domain=hot-3.bench.test ip=10.0.0.4 ttl=300
+2026-11-12 19:40:56,433 INFO CACHE_MISS domain=cold-66.bench.test
+2026-11-12 19:40:56,436 INFO RESOLVED domain=cold-66.bench.test ip=10.0.0.73 ttl=300
+2026-11-12 19:40:56,449 INFO CACHE_MISS domain=cold-67.bench.test
+2026-11-12 19:40:56,449 INFO RESOLVED domain=cold-67.bench.test ip=10.0.0.74 ttl=300
+2026-11-12 19:40:56,465 INFO CACHE_MISS domain=cold-68.bench.test
+2026-11-12 19:40:56,465 INFO RESOLVED domain=cold-68.bench.test ip=10.0.0.75 ttl=300
+2026-11-12 19:40:56,481 INFO CACHE_MISS domain=hot-1.bench.test
+2026-11-12 19:40:56,481 INFO RESOLVED domain=hot-1.bench.test ip=10.0.0.2 ttl=300
+2026-11-12 19:40:56,481 INFO CACHE_MISS domain=cold-70.bench.test
+2026-11-12 19:40:56,481 INFO RESOLVED domain=cold-70.bench.test ip=10.0.0.77 ttl=300
+2026-11-12 19:40:56,497 INFO CACHE_MISS domain=cold-71.bench.test
+2026-11-12 19:40:56,497 INFO RESOLVED domain=cold-71.bench.test ip=10.0.0.78 ttl=300
+2026-11-12 19:40:56,513 INFO CACHE_MISS domain=cold-72.bench.test
+2026-11-12 19:40:56,513 INFO RESOLVED domain=cold-72.bench.test ip=10.0.0.79 ttl=300
+2026-11-12 19:40:56,529 INFO CACHE_MISS domain=cold-73.bench.test
+2026-11-12 19:40:56,529 INFO RESOLVED domain=cold-73.bench.test ip=10.0.0.80 ttl=300
+2026-11-12 19:40:56,529 INFO CACHE_MISS domain=cold-74.bench.test
+2026-11-12 19:40:56,529 INFO RESOLVED domain=cold-74.bench.test ip=10.0.0.81 ttl=300
+2026-11-12 19:40:56,560 INFO CACHE_MISS domain=cold-75.bench.test
+2026-11-12 19:40:56,562 INFO RESOLVED domain=cold-75.bench.test ip=10.0.0.82 ttl=300
+2026-11-12 19:40:56,564 INFO CACHE_MISS domain=cold-76.bench.test
+2026-11-12 19:40:56,564 INFO RESOLVED domain=cold-76.bench.test ip=10.0.0.83 ttl=300
+2026-11-12 19:40:56,576 INFO CACHE_MISS domain=cold-77.bench.test
+2026-11-12 19:40:56,576 INFO RESOLVED domain=cold-77.bench.test ip=10.0.0.84 ttl=300
+2026-11-12 19:40:56,576 INFO CACHE_MISS domain=cold-78.bench.test
+2026-11-12 19:40:56,576 INFO RESOLVED domain=cold-78.bench.test ip=10.0.0.85 ttl=300
+2026-11-12 19:40:56,592 INFO CACHE_MISS domain=cold-79.bench.test
+2026-11-12 19:40:56,592 INFO RESOLVED domain=cold-79.bench.test ip=10.0.0.86 ttl=300
+2026-11-12 19:40:56,607 INFO CACHE_MISS domain=hot-2.bench.test
+2026-11-12 19:40:56,609 INFO RESOLVED domain=hot-2.bench.test ip=10.0.0.3 ttl=300
+2026-11-12 19:40:56,623 INFO CACHE_MISS domain=cold-81.bench.test
+2026-11-12 19:40:56,625 INFO RESOLVED domain=cold-81.bench.test ip=10.0.0.88 ttl=300
+2026-11-12 19:40:56,639 INFO CACHE_MISS domain=cold-82.bench.test
+2026-11-12 19:40:56,639 INFO RESOLVED domain=cold-82.bench.test ip=10.0.0.89 ttl=300
+2026-11-12 19:40:56,639 INFO CACHE_MISS domain=cold-83.bench.test
+2026-11-12 19:40:56,639 INFO RESOLVED domain=cold-83.bench.test ip=10.0.0.90 ttl=300
+2026-11-12 19:40:56,655 INFO CACHE_MISS domain=cold-84.bench.test
+2026-11-12 19:40:56,655 INFO RESOLVED domain=cold-84.bench.test ip=10.0.0.91 ttl=300
+2026-11-12 19:40:56,671 INFO CACHE_MISS domain=cold-85.bench.test
+2026-11-12 19:40:56,672 INFO RESOLVED domain=cold-85.bench.test ip=10.0.0.92 ttl=300
+2026-11-12 19:40:56,687 INFO CACHE_MISS domain=cold-86.bench.test
+2026-11-12 19:40:56,687 INFO RESOLVED domain=cold-86.bench.test ip=10.0.0.93 ttl=300
+2026-11-12 19:40:56,687 INFO CACHE_MISS domain=hot-0.bench.test
+2026-11-12 19:40:56,687 INFO RESOLVED domain=hot-0.bench.test ip=10.0.0.1 ttl=300
+2026-11-12 19:40:56,703 INFO CACHE_MISS domain=hot-1.bench.test
+2026-11-12 19:40:56,704 INFO RESOLVED domain=hot-1.bench.test ip=10.0.0.2 ttl=300
+2026-11-12 19:40:56,719 INFO CACHE_MISS domain=cold-89.bench.test
+2026-11-12 19:40:56,721 INFO RESOLVED domain=cold-89.bench.test ip=10.0.0.96 ttl=300
+2026-11-12 19:40:56,735 INFO CACHE_MISS domain=cold-90.bench.test
+2026-11-12 19:40:56,737 INFO RESOLVED domain=cold-90.bench.test ip=10.0.0.97 ttl=300
+2026-11-12 19:40:56,737 INFO CACHE_MISS domain=cold-91.bench.test
+2026-11-12 19:40:56,739 INFO RESOLVED domain=cold-91.bench.test ip=10.0.0.98 ttl=300
+2026-11-12 19:40:56,751 INFO CACHE_MISS domain=cold-92.bench.test
+2026-11-12 19:40:56,753 INFO RESOLVED domain=cold-92.bench.test ip=10.0.0.99 ttl=300
+2026-11-12 19:40:56,766 INFO CACHE_MISS domain=cold-93.bench.test
+2026-11-12 19:40:56,766 INFO RESOLVED domain=cold-93.bench.test ip=10.0.0.100 ttl=300
+2026-11-12 19:40:56,782 INFO CACHE_MISS domain=cold-94.bench.test
+2026-11-12 19:40:56,782 INFO RESOLVED domain=cold-94.bench.test ip=10.0.0.101 ttl=300
+2026-11-12 19:40:56,782 INFO CACHE_HIT domain=hot-1.bench.test ttl=299
+2026-11-12 19:40:56,799 INFO CACHE_MISS domain=cold-96.bench.test
+2026-11-12 19:40:56,799 INFO RESOLVED domain=cold-96.bench.test ip=10.0.0.103 ttl=300
+2026-11-12 19:40:56,814 INFO CACHE_HIT domain=hot-1.bench.test ttl=299
+2026-11-12 19:40:56,830 INFO CACHE_MISS domain=cold-98.bench.test
+2026-11-12 19:40:56,830 INFO RESOLVED domain=cold-98.bench.test ip=10.0.0.105 ttl=300
+2026-11-12 19:40:56,830 INFO CACHE_MISS domain=hot-0.bench.test
+2026-11-12 19:40:56,830 INFO RESOLVED domain=hot-0.bench.test ip=10.0.0.1 ttl=300
+2026-11-12 19:40:56,846 INFO CACHE_MISS domain=cold-100.bench.test
+2026-11-12 19:40:56,846 INFO RESOLVED domain=cold-100.bench.test ip=10.0.0.107 ttl=300
+2026-11-12 19:40:56,862 INFO CACHE_MISS domain=cold-101.bench.test
+2026-11-12 19:40:56,862 INFO RESOLVED domain=cold-101.bench.test ip=10.0.0.108 ttl=300
+2026-11-12 19:40:56,878 INFO CACHE_MISS domain=cold-102.bench.test
+2026-11-12 19:40:56,878 INFO RESOLVED domain=cold-102.bench.test ip=10.0.0.109 ttl=300
+2026-11-12 19:40:56,878 INFO CACHE_MISS domain=hot-3.bench.test
+2026-11-12 19:40:56,878 INFO RESOLVED domain=hot-3.bench.test ip=10.0.0.4 ttl=300
+2026-11-12 19:40:56,894 INFO CACHE_HIT domain=hot-1.bench.test ttl=299
+2026-11-12 19:40:56,909 INFO CACHE_MISS domain=cold-105.bench.test
+2026-11-12 19:40:56,909 INFO RESOLVED domain=cold-105.bench.test ip=10.0.0.112 ttl=300
+2026-11-12 19:40:56,925 INFO CACHE_MISS domain=hot-2.bench.test
+2026-11-12 19:40:56,925 INFO RESOLVED domain=hot-2.bench.test ip=10.0.0.3 ttl=300
+2026-11-12 19:40:56,929 INFO CACHE_MISS domain=cold-107.bench.test
+2026-11-12 19:40:56,929 INFO RESOLVED domain=cold-107.bench.test ip=10.0.0.114 ttl=300
+2026-11-12 19:40:56,940 INFO CACHE_MISS domain=cold-108.bench.test
+2026-11-12 19:40:56,942 INFO RESOLVED domain=cold-108.bench.test ip=10.0.0.115 ttl=300
+2026-11-12 19:40:56,957 INFO CACHE_MISS domain=cold-109.bench.test
+2026-11-12 19:40:56,959 INFO RESOLVED domain=cold-109.bench.test ip=10.0.0.116 ttl=300
+2026-11-12 19:40:56,973 INFO CACHE_MISS domain=hot-4.bench.test
+2026-11-12 19:40:56,973 INFO RESOLVED domain=hot-4.bench.test ip=10.0.0.5 ttl=300
+2026-11-12 19:40:56,976 INFO CACHE_MISS domain=hot-0.bench.test
+2026-11-12 19:40:56,976 INFO RESOLVED domain=hot-0.bench.test ip=10.0.0.1 ttl=300
+2026-11-12 19:40:56,988 INFO CACHE_MISS domain=cold-112.bench.test
+2026-11-12 19:40:56,988 INFO RESOLVED domain=cold-112.bench.test ip=10.0.0.119 ttl=300
+2026-11-12 19:40:57,005 INFO CACHE_MISS domain=cold-113.bench.test
+2026-11-12 19:40:57,005 INFO RESOLVED domain=cold-113.bench.test ip=10.0.0.120 ttl=300
+2026-11-12 19:40:57,020 INFO CACHE_HIT domain=hot-0.bench.test ttl=299
+2026-11-12 19:40:57,020 INFO CACHE_MISS domain=hot-3.bench.test
+2026-11-12 19:40:57,020 INFO RESOLVED domain=hot-3.bench.test ip=10.0.0.4 ttl=300
+2026-11-12 19:40:57,036 INFO CACHE_MISS domain=cold-116.bench.test
+2026-11-12 19:40:57,036 INFO RESOLVED domain=cold-116.bench.test ip=10.0.0.123 ttl=300
+2026-11-12 19:40:57,053 INFO CACHE_MISS domain=cold-117.bench.test
+2026-11-12 19:40:57,054 INFO RESOLVED domain=cold-117.bench.test ip=10.0.0.124 ttl=300
+2026-11-12 19:40:57,068 INFO CACHE_MISS domain=cold-118.bench.test
+2026-11-12 19:40:57,068 INFO RESOLVED domain=cold-118.bench.test ip=10.0.0.125 ttl=300
+2026-11-12 19:40:57,068 INFO CACHE_MISS domain=cold-119.bench.test
+2026-11-12 19:40:57,068 INFO RESOLVED domain=cold-119.bench.test ip=10.0.0.126 ttl=300
+2026-11-12 19:40:57,084 INFO CACHE_HIT domain=hot-0.bench.test ttl=299
+2026-11-12 19:40:57,099 INFO CACHE_MISS domain=cold-121.bench.test
+2026-11-12 19:40:57,101 INFO RESOLVED domain=cold-121.bench.test ip=10.0.0.128 ttl=300
+2026-11-12 19:40:57,115 INFO CACHE_MISS domain=cold-122.bench.test
+2026-11-12 19:40:57,115 INFO RESOLVED domain=cold-122.bench.test ip=10.0.0.129 ttl=300
+2026-11-12 19:40:57,115 INFO CACHE_HIT domain=hot-0.bench.test ttl=299
+2026-11-12 19:40:57,131 INFO CACHE_MISS domain=cold-124.bench.test
+2026-11-12 19:40:57,133 INFO RESOLVED domain=cold-124.bench.test ip=10.0.0.131 ttl=300
+2026-11-12 19:40:57,147 INFO CACHE_MISS domain=hot-3.bench.test
+2026-11-12 19:40:57,150 INFO RESOLVED domain=hot-3.bench.test ip=10.0.0.4 ttl=300
+2026-11-12 19:40:57,163 INFO CACHE_HIT domain=hot-0.bench.test ttl=299
+2026-11-12 19:40:57,179 INFO CACHE_MISS domain=cold-127.bench.test
+2026-11-12 19:40:57,180 INFO RESOLVED domain=cold-127.bench.test ip=10.0.0.134 ttl=300
+2026-11-12 19:40:57,180 INFO CACHE_MISS domain=hot-2.bench.test
+2026-11-12 19:40:57,183 INFO RESOLVED domain=hot-2.bench.test ip=10.0.0.3 ttl=300
+2026-11-12 19:40:57,194 INFO CACHE_HIT domain=hot-0.bench.test ttl=299
+2026-11-12 19:40:57,210 INFO CACHE_MISS domain=cold-130.bench.test
+2026-11-12 19:40:57,210 INFO RESOLVED domain=cold-130.bench.test ip=10.0.0.137 ttl=300
+2026-11-12 19:40:57,226 INFO CACHE_MISS domain=cold-131.bench.test
+2026-11-12 19:40:57,226 INFO RESOLVED domain=cold-131.bench.test ip=10.0.0.138 ttl=300
+2026-11-12 19:40:57,226 INFO CACHE_MISS domain=cold-132.bench.test
+2026-11-12 19:40:57,226 INFO RESOLVED domain=cold-132.bench.test ip=10.0.0.139 ttl=300
+2026-11-12 19:40:57,242 INFO CACHE_MISS domain=cold-133.bench.test
+2026-11-12 19:40:57,242 INFO RESOLVED domain=cold-133.bench.test ip=10.0.0.140 ttl=300
+2026-11-12 19:40:57,257 INFO CACHE_MISS domain=hot-1.bench.test
+2026-11-12 19:40:57,259 INFO RESOLVED domain=hot-1.bench.test ip=10.0.0.2 ttl=300
+2026-11-12 19:40:57,273 INFO CACHE_MISS domain=hot-4.bench.test
+2026-11-12 19:40:57,273 INFO RESOLVED domain=hot-4.bench.test ip=10.0.0.5 ttl=300
+2026-11-12 19:40:57,277 INFO CACHE_HIT domain=hot-0.bench.test ttl=299
+2026-11-12 19:40:57,289 INFO CACHE_MISS domain=cold-137.bench.test
+2026-11-12 19:40:57,291 INFO RESOLVED domain=cold-137.bench.test ip=10.0.0.144 ttl=300
+2026-11-12 19:40:57,305 INFO CACHE_MISS domain=cold-138.bench.test
+2026-11-12 19:40:57,305 INFO RESOLVED domain=cold-138.bench.test ip=10.0.0.145 ttl=300
+2026-11-12 19:40:57,321 INFO CACHE_MISS domain=cold-139.bench.test
+2026-11-12 19:40:57,321 INFO RESOLVED domain=cold-139.bench.test ip=10.0.0.146 ttl=300
+2026-11-12 19:40:57,321 INFO CACHE_MISS domain=cold-140.bench.test
+2026-11-12 19:40:57,321 INFO RESOLVED domain=cold-140.bench.test ip=10.0.0.147 ttl=300
+2026-11-12 19:40:57,337 INFO CACHE_HIT domain=hot-1.bench.test ttl=299
+2026-11-12 19:40:57,353 INFO CACHE_MISS domain=cold-142.bench.test
+2026-11-12 19:40:57,353 INFO RESOLVED domain=cold-142.bench.test ip=10.0.0.149 ttl=300
+2026-11-12 19:40:57,369 INFO CACHE_MISS domain=cold-143.bench.test
+2026-11-12 19:40:57,369 INFO RESOLVED domain=cold-143.bench.test ip=10.0.0.150 ttl=300
+2026-11-12 19:40:57,369 INFO CACHE_MISS domain=cold-144.bench.test
+2026-11-12 19:40:57,373 INFO RESOLVED domain=cold-144.bench.test ip=10.0.0.151 ttl=300
+2026-11-12 19:40:57,385 INFO CACHE_MISS domain=cold-145.bench.test
+2026-11-12 19:40:57,387 INFO RESOLVED domain=cold-145.bench.test ip=10.0.0.152 ttl=300
+2026-11-12 19:40:57,402 INFO CACHE_MISS domain=cold-146.bench.test
+2026-11-12 19:40:57,402 INFO RESOLVED domain=cold-146.bench.test ip=10.0.0.153 ttl=300
+2026-11-12 19:40:57,418 INFO CACHE_MISS domain=hot-5.bench.test
+2026-11-12 19:40:57,418 INFO RESOLVED domain=hot-5.bench.test ip=10.0.0.6 ttl=300
+2026-11-12 19:40:57,421 INFO CACHE_MISS domain=cold-148.bench.test
+2026-11-12 19:40:57,421 INFO RESOLVED domain=cold-148.bench.test ip=10.0.0.155 ttl=300
+2026-11-12 19:40:57,433 INFO CACHE_MISS domain=cold-149.bench.test
+2026-11-12 19:40:57,435 INFO RESOLVED domain=cold-149.bench.test ip=10.0.0.156 ttl=300
+2026-11-12 19:40:57,449 INFO CACHE_MISS domain=cold-150.bench.test
+2026-11-12 19:40:57,451 INFO RESOLVED domain=cold-150.bench.test ip=10.0.0.157 ttl=300
+2026-11-12 19:40:57,465 INFO CACHE_MISS domain=cold-151.bench.test
+2026-11-12 19:40:57,467 INFO RESOLVED domain=cold-151.bench.test ip=10.0.0.158 ttl=300
+2026-11-12 19:40:57,468 INFO CACHE_MISS domain=cold-152.bench.test
+2026-11-12 19:40:57,468 INFO RESOLVED domain=cold-152.bench.test ip=10.0.0.159 ttl=300
+2026-11-12 19:40:57,480 INFO CACHE_MISS domain=cold-153.bench.test
+2026-11-12 19:40:57,482 INFO RESOLVED domain=cold-153.bench.test ip=10.0.0.160 ttl=300
+2026-11-12 19:40:57,496 INFO CACHE_MISS domain=cold-154.bench.test
+2026-11-12 19:40:57,498 INFO RESOLVED domain=cold-154.bench.test ip=10.0.0.161 ttl=300
+2026-11-12 19:40:57,513 INFO CACHE_MISS domain=cold-155.bench.test
+2026-11-12 19:40:57,514 INFO RESOLVED domain=cold-155.bench.test ip=10.0.0.162 ttl=300
+2026-11-12 19:40:57,515 INFO CACHE_MISS domain=hot-0.bench.test
+2026-11-12 19:40:57,517 INFO RESOLVED domain=hot-0.bench.test ip=10.0.0.1 ttl=300
+2026-11-12 19:40:57,528 INFO CACHE_MISS domain=cold-157.bench.test
+2026-11-12 19:40:57,530 INFO RESOLVED domain=cold-157.bench.test ip=10.0.0.164 ttl=300
+2026-11-12 19:40:57,545 INFO CACHE_MISS domain=cold-158.bench.test
+2026-11-12 19:40:57,545 INFO RESOLVED domain=cold-158.bench.test ip=10.0.0.165 ttl=300
+2026-11-12 19:40:57,560 INFO CACHE_MISS domain=cold-159.bench.test
+2026-11-12 19:40:57,560 INFO RESOLVED domain=cold-159.bench.test ip=10.0.0.166 ttl=300
+2026-11-12 19:40:57,560 INFO CACHE_MISS domain=cold-160.bench.test
+2026-11-12 19:40:57,565 INFO RESOLVED domain=cold-160.bench.test ip=10.0.0.167 ttl=300
+2026-11-12 19:40:57,576 INFO CACHE_MISS domain=cold-161.bench.test
+2026-11-12 19:40:57,577 INFO RESOLVED domain=cold-161.bench.test ip=10.0.0.168 ttl=300
+2026-11-12 19:40:57,592 INFO CACHE_HIT domain=hot-0.bench.test ttl=299
+2026-11-12 19:40:57,608 INFO CACHE_MISS domain=cold-163.bench.test
+2026-11-12 19:40:57,608 INFO RESOLVED domain=cold-163.bench.test ip=10.0.0.170 ttl=300
+2026-11-12 19:40:57,624 INFO CACHE_MISS domain=cold-164.bench.test
+2026-11-12 19:40:57,624 INFO RESOLVED domain=cold-164.bench.test ip=10.0.0.171 ttl=300
+2026-11-12 19:40:57,624 INFO CACHE_MISS domain=cold-165.bench.test
+2026-11-12 19:40:57,624 INFO RESOLVED domain=cold-165.bench.test ip=10.0.0.172 ttl=300
+2026-11-12 19:40:57,640 INFO CACHE_MISS domain=cold-166.bench.test
+2026-11-12 19:40:57,640 INFO RESOLVED domain=cold-166.bench.test ip=10.0.0.173 ttl=300
+2026-11-12 19:40:57,656 INFO CACHE_MISS domain=hot-1.bench.test
+2026-11-12 19:40:57,657 INFO RESOLVED domain=hot-1.bench.test ip=10.0.0.2 ttl=300
+2026-11-12 19:40:57,671 INFO CACHE_MISS domain=hot-3.bench.test
+2026-11-12 19:40:57,673 INFO RESOLVED domain=hot-3.bench.test ip=10.0.0.4 ttl=300
+2026-11-12 19:40:57,673 INFO CACHE_MISS domain=cold-169.bench.test
+2026-11-12 19:40:57,677 INFO RESOLVED domain=cold-169.bench.test ip=10.0.0.176 ttl=300
+2026-11-12 19:40:57,688 INFO CACHE_MISS domain=cold-170.bench.test
+2026-11-12 19:40:57,692 INFO RESOLVED domain=cold-170.bench.test ip=10.0.0.177 ttl=300
+2026-11-12 19:40:57,703 INFO CACHE_MISS domain=cold-171.bench.test
+2026-11-12 19:40:57,703 INFO RESOLVED domain=cold-171.bench.test ip=10.0.0.178 ttl=300
+2026-11-12 19:40:57,719 INFO CACHE_MISS domain=cold-172.bench.test
+2026-11-12 19:40:57,719 INFO RESOLVED domain=cold-172.bench.test ip=10.0.0.179 ttl=300
+2026-11-12 19:40:57,719 INFO CACHE_MISS domain=cold-173.bench.test
+2026-11-12 19:40:57,722 INFO RESOLVED domain=cold-173.bench.test ip=10.0.0.180 ttl=300
+2026-11-12 19:40:57,735 INFO CACHE_MISS domain=cold-174.bench.test
+2026-11-12 19:40:57,736 INFO RESOLVED domain=cold-174.bench.test ip=10.0.0.181 ttl=300
+2026-11-12 19:40:57,750 INFO CACHE_MISS domain=cold-175.bench.test
+2026-11-12 19:40:57,754 INFO RESOLVED domain=cold-175.bench.test ip=10.0.0.182 ttl=300
+2026-11-12 19:40:57,755 INFO CACHE_MISS domain=cold-176.bench.test
+2026-11-12 19:40:57,755 INFO RESOLVED domain=cold-176.bench.test ip=10.0.0.183 ttl=300
+2026-11-12 19:40:57,768 INFO CACHE_MISS domain=cold-177.bench.test
+2026-11-12 19:40:57,768 INFO RESOLVED domain=cold-177.bench.test ip=10.0.0.184 ttl=300
+2026-11-12 19:40:57,781 INFO CACHE_MISS domain=cold-178.bench.test
+2026-11-12 19:40:57,781 INFO RESOLVED domain=cold-178.bench.test ip=10.0.0.185 ttl=300
+2026-11-12 19:40:57,797 INFO CACHE_MISS domain=hot-1.bench.test
+2026-11-12 19:40:57,799 INFO RESOLVED domain=hot-1.bench.test ip=10.0.0.2 ttl=300
+2026-11-12 19:40:57,813 INFO CACHE_MISS domain=cold-180.bench.test
+2026-11-12 19:40:57,817 INFO RESOLVED domain=cold-180.bench.test ip=10.0.0.187 ttl=300
+2026-11-12 19:40:57,817 INFO CACHE_MISS domain=cold-181.bench.test
+2026-11-12 19:40:57,820 INFO RESOLVED domain=cold-181.bench.test ip=10.0.0.188 ttl=300
+2026-11-12 19:40:57,837 INFO CACHE_MISS domain=cold-182.bench.test
+2026-11-12 19:40:57,838 INFO RESOLVED domain=cold-182.bench.test ip=10.0.0.189 ttl=300
+2026-11-12 19:40:57,839 INFO CACHE_MISS domain=cold-183.bench.test
+2026-11-12 19:40:57,839 INFO RESOLVED domain=cold-183.bench.test ip=10.0.0.190 ttl=300
+2026-11-12 19:40:57,857 INFO CACHE_MISS domain=cold-184.bench.test
+2026-11-12 19:40:57,864 INFO RESOLVED domain=cold-184.bench.test ip=10.0.0.191 ttl=300
+2026-11-12 19:40:57,866 INFO CACHE_MISS domain=cold-185.bench.test
+2026-11-12 19:40:57,867 INFO RESOLVED domain=cold-185.bench.test ip=10.0.0.192 ttl=300
+2026-11-12 19:40:57,899 INFO CACHE_MISS domain=cold-186.bench.test
+2026-11-12 19:40:57,900 INFO RESOLVED domain=cold-186.bench.test ip=10.0.0.193 ttl=300
+2026-11-12 19:40:57,902 INFO CACHE_MISS domain=cold-187.bench.test
+2026-11-12 19:40:57,904 INFO RESOLVED domain=cold-187.bench.test ip=10.0.0.194 ttl=300
+2026-11-12 19:40:57,904 INFO CACHE_MISS domain=cold-188.bench.test
+2026-11-12 19:40:57,907 INFO RESOLVED domain=cold-188.bench.test ip=10.0.0.195 ttl=300
+2026-11-12 19:40:57,923 INFO CACHE_MISS domain=cold-189.bench.test
+2026-11-12 19:40:57,925 INFO RESOLVED domain=cold-189.bench.test ip=10.0.0.196 ttl=300
+2026-11-12 19:40:57,927 INFO CACHE_MISS domain=cold-190.bench.test
+2026-11-12 19:40:57,932 INFO RESOLVED domain=cold-190.bench.test ip=10.0.0.197 ttl=300
+2026-11-12 19:40:57,941 INFO CACHE_MISS domain=cold-191.bench.test
+2026-11-12 19:40:57,943 INFO RESOLVED domain=cold-191.bench.test ip=10.0.0.198 ttl=300
+2026-11-12 19:40:57,960 INFO CACHE_MISS domain=cold-192.bench.test
+2026-11-12 19:40:57,984 INFO RESOLVED domain=cold-192.bench.test ip=10.0.0.199 ttl=300
+2026-11-12 19:40:57,990 INFO CACHE_MISS domain=cold-193.bench.test
+2026-11-12 19:40:57,997 INFO RESOLVED domain=cold-193.bench.test ip=10.0.0.200 ttl=300
+2026-11-12 19:40:57,999 INFO CACHE_MISS domain=cold-194.bench.test
+2026-11-12 19:40:58,004 INFO RESOLVED domain=cold-194.bench.test ip=10.0.0.201 ttl=300
+2026-11-12 19:40:58,006 INFO CACHE_MISS domain=cold-195.bench.test
+2026-11-12 19:40:58,010 INFO RESOLVED domain=cold-195.bench.test ip=10.0.0.202 ttl=300
+2026-11-12 19:40:58,011 INFO CACHE_MISS domain=hot-0.bench.test
+2026-11-12 19:40:58,015 INFO RESOLVED domain=hot-0.bench.test ip=10.0.0.1 ttl=300
+2026-11-12 19:40:58,015 INFO CACHE_MISS domain=cold-197.bench.test
+2026-11-12 19:40:58,019 INFO RESOLVED domain=cold-197.bench.test ip=10.0.0.204 ttl=300
+2026-11-12 19:40:58,022 INFO CACHE_MISS domain=cold-198.bench.test
+2026-11-12 19:40:58,024 INFO RESOLVED domain=cold-198.bench.test ip=10.0.0.205 ttl=300
+2026-11-12 19:40:58,038 INFO CACHE_MISS domain=cold-199.bench.test
+2026-11-12 19:40:58,039 INFO RESOLVED domain=cold-199.bench.test ip=10.0.0.206 ttl=300

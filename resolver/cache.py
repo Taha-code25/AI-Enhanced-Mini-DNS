@@ -26,6 +26,10 @@ class DNSCache:
         self.capacity = capacity
         self.entries = OrderedDict()
 
+    @property
+    def policy(self) -> str:
+        return "lru" if self.capacity else "none"
+
     def get(self, domain: str) -> Optional[Tuple[str, int]]:
         """
         Return (IP address, remaining TTL) if cached and not expired.
@@ -60,9 +64,11 @@ class DNSCache:
             expiry=compute_expiry(ttl),
         )
 
-        # Remove least recently used entries if over capacity.
         while len(self.entries) > self.capacity:
-            self.entries.popitem(last=False)
+            self._evict()
+
+    def _evict(self) -> None:
+        self.entries.popitem(last=False)
 
     def clear(self) -> None:
         """Remove every cached entry."""

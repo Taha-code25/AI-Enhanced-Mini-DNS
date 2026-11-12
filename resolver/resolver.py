@@ -5,9 +5,14 @@ Run from the project root with:
     python -m resolver.resolver
 """
 
+import argparse
+from contextlib import nullcontext
 import logging
+from pathlib import Path
 import socket
+import time
 
+from logging_system.query_log import QueryLog
 from protocol.protocol import (
     ErrorCode,
     MessageType,
@@ -38,7 +43,7 @@ def make_upstream_request(domain, request_id):
     return encode_query(request_id, domain)
 
 
-def ask_authoritative(domain, config, request_ids):
+def ask_authoritative(domain, config, request_ids, log_event=None):
     """
     Ask the authoritative server for a domain.
     Returns (IP, TTL) on success, or None if all attempts fail.
@@ -55,7 +60,13 @@ def ask_authoritative(domain, config, request_ids):
             try:
                 # Retries reuse the same packet and request ID.
                 sock.sendto(packet, expected_server)
+                if log_event is not None:
+                    log_event("UPSTREAM_SENT", upstream_request_id=upstream_id,
+                              udp_payload_bytes=len(packet))
                 data, sender = sock.recvfrom(1201)
+                if log_event is not None:
+                    log_event("UPSTREAM_RECEIVED", upstream_request_id=upstream_id,
+                              udp_payload_bytes=len(data))
 
                 reply = is_expected_reply(
                     data, sender, expected_server, upstream_id
@@ -82,6 +93,8 @@ def ask_authoritative(domain, config, request_ids):
                 return result.ip, result.ttl
 
             except socket.timeout:
+                if log_event is not None:
+                    log_event("UPSTREAM_TIMEOUT", upstream_request_id=upstream_id)
                 logger.warning(
                     "Upstream timeout for %s (attempt %s/%s)",
                     domain, attempt + 1, config.upstream_retries + 1
@@ -105,9 +118,22 @@ def ask_authoritative(domain, config, request_ids):
     return None
 
 
-def handle_query(data, client_address, sock, config, cache, request_ids):
+def handle_query(data, client_address, sock, config, cache, request_ids, query_log=None):
     """Validate one client datagram and send a response."""
+    start = time.perf_counter()
     request_id = peek_request_id(data)
+    domain = None
+    policy = cache.policy
+
+    def log_event(event, **details):
+        if query_log is not None:
+            query_log.write(event, request_id, domain, policy, **details)
+
+    def send_reply(packet, status, ttl=None):
+        sock.sendto(packet, client_address)
+        log_event("RESPONSE_SENT" if status == "OK" else "ERROR_SENT",
+                  status=status, ttl=ttl, udp_payload_bytes=len(packet),
+                  latency_ms=(time.perf_counter() - start) * 1000)
 
     try:
         message = decode_message(data)
@@ -122,65 +148,73 @@ def handle_query(data, client_address, sock, config, cache, request_ids):
         domain = decode_query_payload(message.payload)
 
     except ProtocolError as exc:
+        if exc.request_id is not None:
+            request_id = exc.request_id
+        log_event("QUERY_REJECTED", udp_payload_bytes=len(data), status=exc.error_code.name)
         try:
-            sock.sendto(
-                encode_error(
-                    exc.request_id if exc.request_id is not None else request_id,
-                    exc.error_code,
-                ),
-                client_address,
-            )
+            send_reply(encode_error(request_id, exc.error_code), exc.error_code.name)
         except (ProtocolError, OSError):
             logger.warning("Could not send protocol error to %s", client_address)
         return
 
     request_id = message.request_id
+    log_event("QUERY_RECEIVED", udp_payload_bytes=len(data))
 
     cached = cache.get(domain)
     if cached is not None:
         ip, ttl = cached
         logger.info("CACHE_HIT domain=%s ttl=%s", domain, ttl)
-        sock.sendto(encode_response(request_id, ip, ttl), client_address)
+        log_event("CACHE_HIT", ttl=ttl)
+        send_reply(encode_response(request_id, ip, ttl), "OK", ttl)
         return
 
     logger.info("CACHE_MISS domain=%s", domain)
-    answer = ask_authoritative(domain, config, request_ids)
+    log_event("CACHE_MISS")
+    answer = ask_authoritative(domain, config, request_ids, log_event)
 
     if answer == ErrorCode.NOT_FOUND:
-        sock.sendto(
-            encode_error(request_id, ErrorCode.NOT_FOUND), client_address
-        )
+        send_reply(encode_error(request_id, ErrorCode.NOT_FOUND), "NOT_FOUND")
         return
 
     if answer is None:
-        sock.sendto(
-            encode_error(request_id, ErrorCode.SERVFAIL), client_address
-        )
+        send_reply(encode_error(request_id, ErrorCode.SERVFAIL), "SERVFAIL")
         return
 
     ip, ttl = answer
     cache.put(domain, ip, ttl)
 
-    sock.sendto(encode_response(request_id, ip, ttl), client_address)
+    send_reply(encode_response(request_id, ip, ttl), "OK", ttl)
     logger.info("RESOLVED domain=%s ip=%s ttl=%s", domain, ip, ttl)
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Mini DNS resolver")
+    parser.add_argument("--query-log", type=Path, help="append resolver events to a CSV file")
+    parser.add_argument("--ai-model", type=Path, help="use a locally trained Random Forest")
+    args = parser.parse_args()
     config = load_config()
-    cache = DNSCache(config.cache_capacity)
+    if args.ai_model is None:
+        cache = DNSCache(config.cache_capacity)
+    else:
+        from ai.cache_policy import PredictiveCache
+        try:
+            cache = PredictiveCache.from_file(config.cache_capacity, args.ai_model)
+        except (OSError, ValueError, ImportError) as exc:
+            parser.error(str(exc))
     request_ids = RequestIdGenerator()
 
     listen_address = (config.resolver_host, config.resolver_port)
 
-    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+    log_context = QueryLog(args.query_log) if args.query_log else nullcontext()
+    with log_context as query_log, socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
         sock.bind(listen_address)
-        logger.info("Resolver listening on %s:%s", *listen_address)
+        logger.info("Resolver listening on %s:%s", *sock.getsockname())
 
         while True:
             try:
                 data, client_address = sock.recvfrom(1201)
                 handle_query(
-                    data, client_address, sock, config, cache, request_ids
+                    data, client_address, sock, config, cache, request_ids, query_log
                 )
             except KeyboardInterrupt:
                 logger.info("Resolver shutting down")

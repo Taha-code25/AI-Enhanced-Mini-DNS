@@ -1,0 +1,9 @@
+timestamp,component,request_id,domain,event,latency_ms,ttl,cache_policy,upstream_request_id,udp_payload_bytes,status
+1794495056.4814181,resolver,4064108272,portal.university.test,QUERY_RECEIVED,,,ai,,30,
+1794495056.4814181,resolver,4064108272,portal.university.test,CACHE_MISS,,,ai,,,
+1794495056.4814181,resolver,4064108272,portal.university.test,UPSTREAM_SENT,,,ai,1052217613,30,
+1794495056.4964044,resolver,4064108272,portal.university.test,UPSTREAM_RECEIVED,,,ai,1052217613,18,
+1794495056.4964044,resolver,4064108272,portal.university.test,RESPONSE_SENT,9.741100,300,ai,,18,OK
+1794495056.498395,resolver,4064108273,portal.university.test,QUERY_RECEIVED,,,ai,,30,
+1794495056.498395,resolver,4064108273,portal.university.test,CACHE_HIT,,300,ai,,,
+1794495056.5158396,resolver,4064108273,portal.university.test,RESPONSE_SENT,17.908700,300,ai,,18,OK

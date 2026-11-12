@@ -1,0 +1,8 @@
+{
+  "horizon_seconds": 0.15,
+  "history_window_seconds": 2.0,
+  "training_queries": 295,
+  "holdout_queries": 55,
+  "holdout_accuracy": 0.8727272727272727,
+  "holdout_f1": 0.8292682926829268
+}

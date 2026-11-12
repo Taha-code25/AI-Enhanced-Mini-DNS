@@ -288,6 +288,9 @@ spread. Test at least two workloads, such as repeated requests and
 mostly unique domains. Use Wireshark to capture and annotate packets.
 Only report results that have actually been measured.
 
+See the [Member 4 run guide](docs/member4.md) for logging, model training,
+and the reproducible local UDP comparison.
+
 ## Suggested development milestones
 
 1.  **Protocol and host setup:** agree on message formats, ports, status

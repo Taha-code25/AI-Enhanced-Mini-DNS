@@ -24,9 +24,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-# Make protocol/protocol.py importable no matter where the script is run from.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "protocol"))
-from protocol import (  # noqa: E402
+# Support both direct script execution and imports by experiment tools.
+if not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from protocol.protocol import (  # noqa: E402
     ErrorCode, MAX_DATAGRAM_SIZE, MessageType, ProtocolError, RequestIdGenerator,
     decode_error_payload, decode_response_payload, encode_query, is_expected_reply,
     load_config, normalize_domain,
