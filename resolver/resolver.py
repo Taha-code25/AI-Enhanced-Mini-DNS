@@ -4,7 +4,7 @@ resolver.py - UDP resolver with TTL cache and upstream retries.
 Run from the project root with:
     python -m resolver.resolver
 """
-
+import threading
 import argparse
 from contextlib import nullcontext
 import logging
@@ -186,41 +186,151 @@ def handle_query(data, client_address, sock, config, cache, request_ids, query_l
     send_reply(encode_response(request_id, ip, ttl), "OK", ttl)
     logger.info("RESOLVED domain=%s ip=%s ttl=%s", domain, ip, ttl)
 
+class ResolverServer:
+    """Stoppable UDP resolver server for GUI and programmatic use."""
+
+    def __init__(self, config, cache, query_log_path=None):
+        self.config = config
+        self.cache = cache
+        self.query_log_path = query_log_path
+
+        self.request_ids = RequestIdGenerator()
+        self.sock = None
+        self.thread = None
+        self.running = threading.Event()
+        self.address = None
+
+    def start(self):
+        """Start the UDP resolver in a background thread."""
+        if self.running.is_set():
+            return
+
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        self.sock.settimeout(0.25)
+
+        try:
+            self.sock.bind(
+                (self.config.resolver_host, self.config.resolver_port)
+            )
+        except OSError:
+            self.sock.close()
+            self.sock = None
+            raise
+
+        self.address = self.sock.getsockname()
+        self.running.set()
+
+        self.thread = threading.Thread(
+            target=self._serve,
+            name="ResolverServer",
+            daemon=True,
+        )
+        self.thread.start()
+
+        logger.info(
+            "Resolver listening on %s:%s", *self.address
+        )
+
+    def _serve(self):
+        """Receive and process DNS requests until stopped."""
+        log_context = (
+            QueryLog(self.query_log_path)
+            if self.query_log_path else nullcontext()
+        )
+
+        try:
+            with log_context as query_log:
+                while self.running.is_set():
+                    try:
+                        data, client_address = self.sock.recvfrom(1201)
+
+                        handle_query(
+                            data,
+                            client_address,
+                            self.sock,
+                            self.config,
+                            self.cache,
+                            self.request_ids,
+                            query_log,
+                        )
+
+                    except socket.timeout:
+                        continue
+
+                    except OSError:
+                        if self.running.is_set():
+                            logger.exception("Resolver socket error")
+                        break
+
+        except Exception:
+            logger.exception("Resolver server stopped unexpectedly")
+
+        finally:
+            self.running.clear()
+
+    def stop(self):
+        """Stop the UDP resolver safely."""
+        self.running.clear()
+
+        if self.sock is not None:
+            self.sock.close()
+            self.sock = None
+
+        if self.thread is not None:
+            self.thread.join(timeout=2)
+            self.thread = None
+
+        self.address = None
+        logger.info("Resolver stopped")
+
+
 
 def main():
     parser = argparse.ArgumentParser(description="Mini DNS resolver")
-    parser.add_argument("--query-log", type=Path, help="append resolver events to a CSV file")
-    parser.add_argument("--ai-model", type=Path, help="use a locally trained Random Forest")
+    parser.add_argument(
+        "--query-log",
+        type=Path,
+        help="append resolver events to a CSV file",
+    )
+    parser.add_argument(
+        "--ai-model",
+        type=Path,
+        help="use a locally trained Random Forest",
+    )
     args = parser.parse_args()
+
     config = load_config()
+
     if args.ai_model is None:
         cache = DNSCache(config.cache_capacity)
     else:
         from ai.cache_policy import PredictiveCache
+
         try:
-            cache = PredictiveCache.from_file(config.cache_capacity, args.ai_model)
+            cache = PredictiveCache.from_file(
+                config.cache_capacity,
+                args.ai_model,
+            )
         except (OSError, ValueError, ImportError) as exc:
             parser.error(str(exc))
-    request_ids = RequestIdGenerator()
 
-    listen_address = (config.resolver_host, config.resolver_port)
+    server = ResolverServer(
+        config=config,
+        cache=cache,
+        query_log_path=args.query_log,
+    )
 
-    log_context = QueryLog(args.query_log) if args.query_log else nullcontext()
-    with log_context as query_log, socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
-        sock.bind(listen_address)
-        logger.info("Resolver listening on %s:%s", *sock.getsockname())
+    try:
+        server.start()
 
-        while True:
-            try:
-                data, client_address = sock.recvfrom(1201)
-                handle_query(
-                    data, client_address, sock, config, cache, request_ids, query_log
-                )
-            except KeyboardInterrupt:
-                logger.info("Resolver shutting down")
-                break
-            except OSError as exc:
-                logger.exception("Socket error: %s", exc)
+        while server.running.is_set():
+            time.sleep(0.5)
+
+    except KeyboardInterrupt:
+        logger.info("Resolver shutting down")
+
+    finally:
+        server.stop()
 
 
 if __name__ == "__main__":

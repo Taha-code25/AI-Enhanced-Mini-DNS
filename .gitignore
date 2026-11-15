@@ -8,3 +8,9 @@ __pycache__/
 
 # Testing
 .pytest_cache/
+# GUI-generated training artifacts and logs
+results/gui-training/
+results/gui-resolver.csv
+
+# Local resolver backup
+resolver/resolver_before_gui.py
