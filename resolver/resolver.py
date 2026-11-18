@@ -189,10 +189,11 @@ def handle_query(data, client_address, sock, config, cache, request_ids, query_l
 class ResolverServer:
     """Stoppable UDP resolver server for GUI and programmatic use."""
 
-    def __init__(self, config, cache, query_log_path=None):
+    def __init__(self, config, cache, query_log_path=None, *, reset_query_log=False):
         self.config = config
         self.cache = cache
         self.query_log_path = query_log_path
+        self.reset_query_log = reset_query_log
 
         self.request_ids = RequestIdGenerator()
         self.sock = None
@@ -209,9 +210,16 @@ class ResolverServer:
         self.sock.settimeout(0.25)
 
         try:
+            # Windows can otherwise allow a wildcard bind alongside a
+            # resolver already listening on a specific local address.
+            if hasattr(socket, "SO_EXCLUSIVEADDRUSE"):
+                self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
             self.sock.bind(
                 (self.config.resolver_host, self.config.resolver_port)
             )
+            if self.reset_query_log and self.query_log_path is not None:
+                self.query_log_path.parent.mkdir(parents=True, exist_ok=True)
+                self.query_log_path.write_text("", encoding="utf-8")
         except OSError:
             self.sock.close()
             self.sock = None

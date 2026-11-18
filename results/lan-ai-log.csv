@@ -1,0 +1,1 @@
+timestamp,component,request_id,domain,event,latency_ms,ttl,cache_policy,upstream_request_id,udp_payload_bytes,status

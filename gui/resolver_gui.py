@@ -2,6 +2,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import csv
+import errno
 import sys
 import time
 from dataclasses import replace
@@ -322,17 +323,24 @@ class ResolverGUI:
                 cache_capacity=capacity
             )
 
-            # Start a fresh log for this GUI session
-            self.log_path.parent.mkdir(parents=True, exist_ok=True)
-            self.log_path.write_text("", encoding="utf-8")
-
             self.server = ResolverServer(
                 config=config,
                 cache=cache,
-                query_log_path=self.log_path
+                query_log_path=self.log_path,
+                reset_query_log=True
             )
 
-            self.server.start()
+            try:
+                self.server.start()
+            except OSError as exc:
+                if exc.errno in (errno.EADDRINUSE, 10048, 10013):
+                    raise RuntimeError(
+                        f"Resolver port {port} is unavailable. Close any other "
+                        "resolver using it, or choose a different Resolver Port "
+                        "and enter the same port in the client.\n\n"
+                        f"{exc}"
+                    ) from exc
+                raise
 
             self.start_button.configure(state="disabled")
             self.stop_button.configure(state="normal")
@@ -402,7 +410,11 @@ class ResolverGUI:
             with self.log_path.open(
                 "r", newline="", encoding="utf-8"
             ) as file:
-                rows = list(csv.DictReader(file))
+                # The resolver may still be writing the final row.
+                rows = [
+                    row for row in csv.DictReader(file)
+                    if row.get("status") is not None
+                ]
 
             total = sum(
                 row["event"] == "QUERY_RECEIVED" for row in rows
